@@ -95,7 +95,7 @@ h1, h2, h3, .logo {
   padding: 0 clamp(1.25rem, 3vw, 2.5rem);
   font-size: 7vw;              /* the script fits it to the exact width */
   font-weight: 800;
-  letter-spacing: -.05em;
+  letter-spacing: -.04em;
   line-height: .95;
   white-space: nowrap;
   cursor: pointer;
