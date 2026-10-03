@@ -35,7 +35,7 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
-.nav, .hero, .section, .contact-top {
+.nav, .hero, .section {
   max-width: 72rem;
   margin: 0 auto;
   padding-left: clamp(1.25rem, 5vw, 3rem);
@@ -94,16 +94,10 @@ h1, h2, h3 {
 
 /* Contact footer with the giant email */
 .contact { border-top: 1px solid var(--line); padding-top: 6rem; overflow: hidden; }
-.contact-top { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem 3rem; flex-wrap: wrap; }
-.contact-top h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
-.contact-list { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; }
-.contact-list a { color: var(--muted); transition: color .2s; }
-.contact-list a:hover { color: var(--ink); }
 
 .mega {
   display: block;
   width: max-content;
-  margin-top: clamp(3rem, 8vw, 6rem);
   padding: 0 clamp(1.25rem, 3vw, 2.5rem);
   font-family: var(--serif);
   font-size: 7vw;              /* the script fits it to the exact width */
@@ -121,9 +115,25 @@ h1, h2, h3 {
 .mega:hover span { transform: translateY(-.08em); color: var(--accent); }
 .mega:active span { transform: translateY(0); }
 
+.details {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: .75rem 2.5rem;
+  margin: clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 3vw, 2.5rem) 0;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+.details a { transition: color .25s; }
+.details a:hover { color: var(--accent); }
 .hint {
-  padding: 1rem clamp(1.25rem, 3vw, 2.5rem) 0;
-  font-size: .9rem; color: var(--muted);
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: .85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
 }
 .legal {
   display: flex; justify-content: space-between; gap: 1rem;
@@ -135,6 +145,7 @@ h1, h2, h3 {
 .legal a:hover { color: var(--ink); }
 
 @media (max-width: 700px) {
+  .hint { margin-left: 0; width: 100%; }
   .project { grid-template-columns: 1fr; }
   .nav { letter-spacing: .14em; font-size: .78rem; }
   .links { gap: 1.25rem; }
