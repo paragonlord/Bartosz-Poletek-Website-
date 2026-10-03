@@ -2,7 +2,7 @@
 :root {
   --bg: #f4efe6;      /* warm paper */
   --ink: #141413;     /* near-black text */
-  --muted: #5f5b53;
+  --muted: #57534b;
   --accent: #55674a;  /* calm sage */
   --line: #d9d2c4;
   --soft: #ebe4d6;
@@ -13,19 +13,24 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: "Karla", system-ui, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Arial, sans-serif;
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+::selection { background: var(--ink); color: var(--bg); }
 a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
 h1, h2, h3, .logo {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 900;
-  letter-spacing: -.02em;
-  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1;
+  text-wrap: balance;
 }
 
-.nav, .hero, .section, .footer {
+.nav, .hero, .section, .contact-top {
   max-width: 72rem;
   margin: 0 auto;
   padding-left: clamp(1.25rem, 5vw, 3rem);
@@ -36,15 +41,14 @@ h1, h2, h3, .logo {
   display: flex; justify-content: space-between; align-items: center;
   padding-top: 1.75rem; padding-bottom: 1.75rem;
 }
-.logo { font-size: 1.35rem; }
+.logo { font-size: 1.2rem; letter-spacing: -.02em; }
 .links { display: flex; gap: 2rem; font-weight: 500; }
-.links a { border-bottom: 1px solid transparent; transition: border-color .2s; }
-.links a:hover { border-color: var(--ink); }
-
+.links a { color: var(--muted); transition: color .2s; }
+.links a:hover { color: var(--ink); }
 
 .hero { padding-top: clamp(4rem, 12vw, 9rem); padding-bottom: clamp(5rem, 12vw, 9rem); }
-.hero h1 { font-size: clamp(3.25rem, 10vw, 8rem); }
-.lead { max-width: 32rem; font-size: 1.2rem; color: var(--muted); margin: 2rem 0 2.5rem; }
+.hero h1 { font-size: clamp(3.25rem, 9.5vw, 7.5rem); }
+.lead { max-width: 34rem; font-size: 1.2rem; color: var(--muted); margin: 2rem 0 2.5rem; }
 
 .btn {
   display: inline-block;
@@ -58,7 +62,7 @@ h1, h2, h3, .logo {
 .btn:hover { background: var(--accent); }
 
 .section { padding-top: 6rem; padding-bottom: 6rem; border-top: 1px solid var(--line); }
-.section h2 { font-size: clamp(2.25rem, 6vw, 4rem); margin-bottom: 2.5rem; }
+.section h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 2.5rem; }
 .body { max-width: 38rem; font-size: 1.2rem; color: var(--muted); }
 
 .project { display: grid; grid-template-columns: 3fr 2fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
@@ -68,40 +72,65 @@ h1, h2, h3, .logo {
   background: var(--soft);
   border-radius: 1rem;
   overflow: hidden;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.5rem;
+  font-weight: 500;
   color: var(--muted);
 }
 .thumb img { width: 100%; height: 100%; object-fit: cover; }
-.project-info h3 { font-size: clamp(2rem, 4vw, 3rem); margin: .5rem 0 1rem; }
+.project-info h3 { font-size: clamp(2rem, 4vw, 2.75rem); margin: .5rem 0 1rem; }
 .project-info p { color: var(--muted); }
-.tag { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--accent); font-weight: 500; }
+.tag { font-size: .85rem; font-weight: 500; color: var(--accent); }
 
-.big-link {
+/* Contact footer with the giant email */
+.contact { border-top: 1px solid var(--line); padding-top: 6rem; overflow: hidden; }
+.contact-top { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem 3rem; flex-wrap: wrap; }
+.contact-top h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+.contact-list { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; font-weight: 500; }
+.contact-list a { color: var(--muted); transition: color .2s; }
+.contact-list a:hover { color: var(--ink); }
+
+.mega {
+  display: block;
+  width: max-content;
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+  font-size: 7vw;              /* the script fits it to the exact width */
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: .95;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.mega span {
   display: inline-block;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.4rem, 4.5vw, 3rem); font-weight: 800;
-  padding-bottom: .25rem;
-  border-bottom: 3px solid var(--ink);
-  overflow-wrap: anywhere;
-  transition: color .2s, border-color .2s;
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1), color .3s;
+  transition-delay: calc(var(--i) * 12ms);
 }
-.big-link:hover { color: var(--accent); border-color: var(--accent); }
-.contact-list { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; font-weight: 500; }
-.contact-list a:hover { color: var(--accent); }
+.mega:hover span { transform: translateY(-.08em); color: var(--accent); }
+.mega:active span { transform: translateY(0); }
 
-.footer {
-  display: flex; justify-content: space-between; gap: 1rem;
-  padding-top: 2rem; padding-bottom: 3rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted); font-size: .9rem;
+.hint {
+  padding: 1rem clamp(1.25rem, 3vw, 2.5rem) 0;
+  font-size: .9rem; color: var(--muted);
 }
+.legal {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin-top: 4rem;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2.5rem) 2rem;
+  border-top: 1px solid var(--line);
+  font-size: .9rem; color: var(--muted);
+}
+.legal a:hover { color: var(--ink); }
 
 @media (max-width: 700px) {
   .project { grid-template-columns: 1fr; }
   .links { gap: 1.25rem; }
-  .logo { font-size: 1.1rem; }
+  .logo { font-size: 1.05rem; }
 }
 @media (max-width: 420px) {
   .links a[href="#about"] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .mega span { transition: color .2s; }
+  .mega:hover span { transform: none; }
 }

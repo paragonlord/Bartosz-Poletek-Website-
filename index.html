@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bartosz Poletek — Web Design</title>
-  <meta name="description" content="Bartosz Poletek designs bold, professional websites.">
+  <title>Bartosz Poletek | Web Design</title>
+  <meta name="description" content="Bartosz Poletek designs and builds websites for businesses that want to look the part.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,13 +22,13 @@
   </nav>
 
   <header id="top" class="hero">
-    <h1>Websites with<br>character.</h1>
-    <p class="lead">Clean, bold and calm. I design websites that feel effortless to use and say exactly who you are.</p>
+    <h1>Websites,<br>done properly.</h1>
+    <p class="lead">I design and build websites for businesses that want to look the part. Every page is planned, written for and tested on real phones before it goes live.</p>
     <a href="#contact" class="btn">Start a project</a>
   </header>
 
   <section id="work" class="section">
-    <h2>Selected project</h2>
+    <h2>Work</h2>
 
     <!-- Portfolio: copy this <article> for each new project. Put images in /images and swap the thumb div for an <img>. -->
     <article class="project">
@@ -36,31 +36,61 @@
       <div class="project-info">
         <span class="tag">Website</span>
         <h3>Project One</h3>
-        <p>A short line about the client and what you built for them.</p>
+        <p>Case study coming soon.</p>
       </div>
     </article>
   </section>
 
   <section id="about" class="section">
-    <h2>Design that means business.</h2>
-    <p class="body">I'm Bartosz, a web designer helping businesses and creators stand out online. Strong typography, plenty of room to breathe, and sites that work beautifully on every device.</p>
+    <h2>About</h2>
+    <p class="body">I'm Bartosz. I work directly with every client, from the first conversation to launch day, and I sweat the details most people never notice, like spacing and how a page reads on a small screen.</p>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Let's work together.</h2>
-    <a class="big-link" href="mailto:hello@bartoszpoletek.com">hello@bartoszpoletek.com</a>
-    <ul class="contact-list">
-      <li><a href="tel:+48000000000">+48 000 000 000</a></li>
-      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-    </ul>
-  </section>
+  <footer id="contact" class="contact">
+    <div class="contact-top">
+      <h2>Got a project in mind?</h2>
+      <ul class="contact-list">
+        <li><a href="tel:+31634308543">+31 (0)6 34308543</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
 
-  <footer class="footer">
-    <p>© <span id="year">2026</span> Bartosz Poletek</p>
-    <a href="#top">Back to top ↑</a>
+    <a class="mega" href="mailto:contact@bartoszpoletek.com" aria-label="Email contact@bartoszpoletek.com">contact@bartoszpoletek.com</a>
+    <p class="hint" aria-live="polite">Click to email. The address is copied too.</p>
+
+    <div class="legal">
+      <p>© <span id="year">2026</span> Bartosz Poletek</p>
+      <a href="#top">Back to top</a>
+    </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mega = document.querySelector('.mega');
+    const hint = document.querySelector('.hint');
+
+    // Split into letters for the hover wave.
+    mega.innerHTML = [...mega.textContent]
+      .map((c, i) => `<span style="--i:${i}" aria-hidden="true">${c}</span>`).join('');
+
+    // Shrink or grow the email so it spans the full width.
+    function fit() {
+      const pad = parseFloat(getComputedStyle(mega).paddingLeft) * 2;
+      mega.style.fontSize = '100px';
+      const avail = mega.parentElement.clientWidth - pad;
+      mega.style.fontSize = (100 * avail / (mega.scrollWidth - pad)) + 'px';
+    }
+    document.fonts.ready.then(fit);
+    addEventListener('resize', fit);
+    fit();
+
+    mega.addEventListener('click', () => {
+      navigator.clipboard?.writeText('contact@bartoszpoletek.com').then(() => {
+        hint.textContent = 'Copied to your clipboard.';
+        setTimeout(() => hint.textContent = 'Click to email. The address is copied too.', 2500);
+      }).catch(() => {});
+    });
+  </script>
 </body>
 </html>
