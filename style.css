@@ -36,7 +36,7 @@ h1 span, h2 span, .logo span { color: var(--accent); }
   display: inline-block;
   padding: .9rem 1.6rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--bg);
   font-weight: 600;
   border: 2px solid var(--accent);
   transition: transform .15s, background .15s;
@@ -80,17 +80,17 @@ h1 span, h2 span, .logo span { color: var(--accent); }
 
 .about p { max-width: 40rem; font-size: 1.25rem; color: var(--muted); margin-top: 1.5rem; }
 
-.contact { background: var(--accent); color: #fff; border: 0; }
-.contact h2 span { color: var(--bg); }
+.contact { background: var(--accent); color: var(--bg); border: 0; }
+.contact h2 span { color: #fff; }
 .big-link {
   display: inline-block; margin: 2.5rem 0 2rem;
   font-size: clamp(1.25rem, 4vw, 2.5rem); font-weight: 900;
   border-bottom: 4px solid currentColor;
   word-break: break-all;
 }
-.big-link:hover { color: var(--bg); }
+.big-link:hover { color: #fff; }
 .contact-list { list-style: none; display: flex; gap: 2rem; flex-wrap: wrap; font-weight: 600; }
-.contact-list a:hover { color: var(--bg); }
+.contact-list a:hover { color: #fff; }
 
 .footer { padding: 2rem clamp(1rem, 5vw, 4rem); color: var(--muted); font-size: .9rem; }
 
