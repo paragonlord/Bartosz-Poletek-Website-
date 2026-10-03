@@ -7,7 +7,7 @@
   <meta name="description" content="Bartosz Poletek designs and builds websites for businesses that want to look the part.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Geist:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,13 +16,30 @@
     <a href="#top" class="logo">Bartosz Poletek</a>
     <div class="links">
       <a href="#work">Work</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <header id="top" class="hero">
-    <h1>Websites,<br>done properly.</h1>
+    <div class="card-stage">
+      <div class="card" role="img" aria-label="Business card: Bartosz Poletek, Web Designer">
+        <div class="card-row">
+          <span>+31 (0)6 34308543</span>
+          <span>bartoszpoletek.com</span>
+        </div>
+        <div class="card-name">
+          <strong>Bartosz Poletek</strong>
+          <span>Web Designer</span>
+        </div>
+        <div class="card-row card-foot">
+          <span>Design &amp; Development</span>
+          <span>Est. 2026</span>
+        </div>
+      </div>
+    </div>
+    <p class="caption">Bone stock. Raised lettering.</p>
+
+    <h1>Websites, done properly.</h1>
     <p class="lead">I design and build websites for businesses that want to look the part. Every page is planned, written for and tested on real phones before it goes live.</p>
     <a href="#contact" class="btn">Start a project</a>
   </header>
@@ -39,11 +56,6 @@
         <p>Case study coming soon.</p>
       </div>
     </article>
-  </section>
-
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p class="body">I'm Bartosz. I work directly with every client, from the first conversation to launch day, and I sweat the details most people never notice, like spacing and how a page reads on a small screen.</p>
   </section>
 
   <footer id="contact" class="contact">
@@ -66,6 +78,25 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Business card tilts toward the cursor.
+    const stage = document.querySelector('.card-stage');
+    const card = document.querySelector('.card');
+    if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+      stage.addEventListener('pointermove', e => {
+        const r = stage.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5;
+        const y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = `rotateX(${-y * 10}deg) rotateY(${x * 14}deg)`;
+        card.style.setProperty('--sx', `${-x * 30}px`);
+        card.style.setProperty('--sy', `${30 - y * 20}px`);
+      });
+      stage.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+        card.style.removeProperty('--sx');
+        card.style.removeProperty('--sy');
+      });
+    }
 
     const mega = document.querySelector('.mega');
     const hint = document.querySelector('.hint');
