@@ -56,8 +56,7 @@ h1, h2, h3 {
 .hero { padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(5rem, 12vw, 9rem); text-align: center; }
 /* Pen-signature script for the name */
 .hero h1 { font-family: "Herr Von Muellerhoff", var(--serif); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: min(10vw, 9rem); line-height: 1.15; }
-.sub::before { content: ""; display: block; width: min(35%, 16rem); margin: 0 auto clamp(.9rem, 1.6vw, 1.3rem); border-top: 1px solid var(--ink); }
-.sub { margin-top: clamp(1.25rem, 2.5vw, 2rem); font-family: var(--serif); font-size: clamp(.95rem, 4.6vw, 2.1rem); text-transform: uppercase; letter-spacing: .14em; }
+.sub { display: inline-block; margin-top: clamp(1.25rem, 2.5vw, 2rem); padding: 1.1em 1.4em 0; border-top: 1px solid var(--ink); font-family: var(--serif); font-size: clamp(.72rem, 3.3vw, 1.15rem); text-transform: uppercase; letter-spacing: .3em; }
 .lead { max-width: 34rem; text-wrap: pretty; margin: 2rem auto 2.5rem; font-size: 1.15rem; color: var(--muted); }
 
 .btn {
@@ -163,6 +162,7 @@ h1, h2, h3 {
   .details a { margin-right: -.14em; }
   .project { grid-template-columns: 1fr; }
   .hero h1 { font-size: 24vw; line-height: 1; }
+  .sub { letter-spacing: .22em; padding: 1.1em .8em 0; }
     .reg span { display: block; }
   .reg span::before { content: none; }
 }
