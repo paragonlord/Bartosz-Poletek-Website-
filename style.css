@@ -53,7 +53,8 @@ h1, h2, h3 {
 
 /* Hero */
 .hero { padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(5rem, 12vw, 9rem); text-align: center; }
-.hero h1 { font-size: min(18.5vw, 12rem); letter-spacing: .04em; line-height: .92; }
+/* Empire-era Didone for the name. Didot and Bodoni ship with Apple devices; others fall back to Garamond. */
+.hero h1 { font-family: "Didot", "Bodoni 72", "Bodoni MT", "Bodoni Moda", var(--serif); font-weight: 400; font-size: min(15.5vw, 10rem); letter-spacing: .05em; line-height: .95; }
 .sub { margin-top: clamp(1rem, 2vw, 1.75rem); font-family: var(--serif); font-size: clamp(.95rem, 4.6vw, 2.1rem); text-transform: uppercase; letter-spacing: .14em; }
 .lead { max-width: 34rem; text-wrap: pretty; margin: 2rem auto 2.5rem; font-size: 1.15rem; color: var(--muted); }
 
