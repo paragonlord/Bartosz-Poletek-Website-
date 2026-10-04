@@ -6,7 +6,7 @@ const hintText = hint.textContent;
 
 // Split into letters for the hover wave.
 mega.innerHTML = [...mega.textContent]
-  .map((c, i) => `<span style="--i:${i}" aria-hidden="true">${c}</span>` + (c === '@' ? '<br class="m-br">' : '')).join('');
+  .map((c, i) => `<span style="--i:${i}" aria-hidden="true">${c}</span>`).join('');
 
 // Shrink or grow the email so it spans the full width.
 function fit() {

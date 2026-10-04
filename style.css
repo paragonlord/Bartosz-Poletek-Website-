@@ -161,7 +161,7 @@ h1, h2, h3 {
   .section { padding-top: 4rem; padding-bottom: 4rem; }
   .section h2 { margin-bottom: 2rem; }
   .contact { padding-top: 4rem; }
-  .m-br { display: inline; }   /* email breaks after the @ so it can be bigger */
+  .m-br { display: inline; }   /* name breaks onto two lines */
   .mega { line-height: 1.05; text-align: center; }
   .details { gap: .5rem 2rem; font-size: 1.05rem; letter-spacing: .14em; }
   .details a { margin-right: -.14em; }
