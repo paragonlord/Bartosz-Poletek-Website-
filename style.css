@@ -43,30 +43,19 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
-.nav, .hero, .section {
+.hero, .section {
   max-width: 72rem;
   margin: 0 auto;
   padding-left: clamp(1.25rem, 5vw, 3rem);
   padding-right: clamp(1.25rem, 5vw, 3rem);
 }
 
-.nav {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 2rem; padding-bottom: 2rem;
-  font-family: var(--serif);
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  font-size: .85rem;
-}
-.logo { font-weight: 600; }
-.links { display: flex; gap: 2.25rem; }
-.links a { color: var(--muted); transition: color .2s; }
-.links a:hover { color: var(--ink); }
 
 /* Hero */
-.hero { padding-top: clamp(4rem, 12vw, 9rem); padding-bottom: clamp(5rem, 12vw, 9rem); }
-.hero h1 { font-size: clamp(2.1rem, 8.8vw, 6rem); }
-.lead { max-width: 34rem; text-wrap: pretty; margin: 2rem 0 2.5rem; font-size: 1.15rem; color: var(--muted); }
+.hero { padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(5rem, 12vw, 9rem); text-align: center; }
+.hero h1 { font-size: min(18.5vw, 12rem); letter-spacing: .04em; line-height: .92; }
+.sub { margin-top: clamp(1rem, 2vw, 1.75rem); font-family: var(--serif); font-size: clamp(.95rem, 4.6vw, 2.1rem); text-transform: uppercase; letter-spacing: .14em; }
+.lead { max-width: 34rem; text-wrap: pretty; margin: 2rem auto 2.5rem; font-size: 1.15rem; color: var(--muted); }
 
 .btn {
   display: inline-block;
@@ -170,8 +159,6 @@ h1, h2, h3 {
   .details { gap: .5rem 2rem; font-size: 1.05rem; letter-spacing: .14em; }
   .details a { margin-right: -.14em; }
   .project { grid-template-columns: 1fr; }
-  .nav { letter-spacing: .14em; font-size: .78rem; }
-  .links { gap: 1.25rem; }
   .reg span { display: block; }
   .reg span::before { content: none; }
 }
