@@ -156,6 +156,10 @@ h1, h2, h3 {
   font-size: .9rem; color: var(--muted);
 }
 .legal a:hover { color: var(--ink); }
+.reg { margin-top: .35rem; font-size: .8rem; letter-spacing: .02em; }
+.reg span { white-space: nowrap; }
+.reg span::before { content: "·"; margin: 0 .5em 0 .2em; }
+.legal > a { white-space: nowrap; }
 
 @media (max-width: 700px) {
   .section { padding-top: 4rem; padding-bottom: 4rem; }
@@ -168,6 +172,8 @@ h1, h2, h3 {
   .project { grid-template-columns: 1fr; }
   .nav { letter-spacing: .14em; font-size: .78rem; }
   .links { gap: 1.25rem; }
+  .reg span { display: block; }
+  .reg span::before { content: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
