@@ -3,7 +3,7 @@
 @font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 @font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
 @font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Bodoni Moda"; src: url("fonts/bodoni-moda-latin-opsz-normal.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Monsieur La Doulaise"; src: url("fonts/monsieur-la-doulaise-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Geist"; src: url("fonts/geist-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Geist"; src: url("fonts/geist-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 
@@ -54,8 +54,8 @@ h1, h2, h3 {
 
 /* Hero */
 .hero { padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(5rem, 12vw, 9rem); text-align: center; }
-/* Empire-era Didone for the name */
-.hero h1 { font-family: "Bodoni Moda", "Didot", "Bodoni 72", var(--serif); font-weight: 500; font-variation-settings: "opsz" 28; font-size: min(15.5vw, 10rem); letter-spacing: .05em; line-height: .95; }
+/* Napoleonic-era copperplate script for the name */
+.hero h1 { font-family: "Monsieur La Doulaise", var(--serif); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: min(11vw, 10rem); line-height: 1.1; }
 .sub { margin-top: clamp(1rem, 2vw, 1.75rem); font-family: var(--serif); font-size: clamp(.95rem, 4.6vw, 2.1rem); text-transform: uppercase; letter-spacing: .14em; }
 .lead { max-width: 34rem; text-wrap: pretty; margin: 2rem auto 2.5rem; font-size: 1.15rem; color: var(--muted); }
 
@@ -161,7 +161,7 @@ h1, h2, h3 {
   .details { gap: .5rem 2rem; font-size: 1.05rem; letter-spacing: .14em; }
   .details a { margin-right: -.14em; }
   .project { grid-template-columns: 1fr; }
-  .hero h1 { font-variation-settings: "opsz" 11; }
+  .hero h1 { font-size: 25vw; line-height: 1; }
   .reg span { display: block; }
   .reg span::before { content: none; }
 }
