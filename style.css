@@ -168,3 +168,5 @@ h1, h2, h3 {
   .mega span { transition: color .2s; }
   .mega:hover span { transform: none; }
 }
+.visit { color: var(--ink); border-bottom: 1px solid currentColor; transition: color .2s; }
+.visit:hover { color: var(--accent); }
